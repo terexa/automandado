@@ -1,2 +1,31 @@
 <hr>
-Home
+
+<h1>Home Example</h1>
+<%= form_tag send_order_home_index_path, :method => :post do %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  	
+    <% @menus.each do |menu| %>
+      <tr>
+        <td><%= menu.name %></td>
+        <td><%= menu.description %></td>
+        <td><%= menu.price %></td>
+        <td><%= check_box_tag 'menu_'+menu.id.to_s, menu.id, params[:value] %></td>
+      </tr>
+    <% end %>    
+    
+
+  </tbody>
+</table>
+
+<div class="actions"><%= submit_tag "Send order" %></div>
+<% end %>
