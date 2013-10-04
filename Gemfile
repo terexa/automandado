@@ -1,3 +1,4 @@
+# source and ruby version should be available for heroku
 source 'https://rubygems.org'
 ruby "1.9.3"
 
