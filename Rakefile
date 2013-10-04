@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-DeliveryPro::Application.load_tasks
+Automandado::Application.load_tasks

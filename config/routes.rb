@@ -1,4 +1,4 @@
-DeliveryPro::Application.routes.draw do
+Automandado::Application.routes.draw do
   namespace :admin do
     resources :menus
   end

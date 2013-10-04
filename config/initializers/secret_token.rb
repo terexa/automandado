@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-DeliveryPro::Application.config.secret_key_base = '4c5da27b53d2ae241adbf845cd45df77cba8d0e16ce1858050fd0309e1e76e4c2b9bde4cdf9e62236d9d3583eff7a54220139030690c77dcaf7b2730e796fc6a'
+Automandado::Application.config.secret_key_base = '4c5da27b53d2ae241adbf845cd45df77cba8d0e16ce1858050fd0309e1e76e4c2b9bde4cdf9e62236d9d3583eff7a54220139030690c77dcaf7b2730e796fc6a'

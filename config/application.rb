@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
-module DeliveryPro
+module Automandado
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -24,6 +24,6 @@ module DeliveryPro
      
 
    # forcing your application to not access the DB or load models when precompiling your assets.
-   config.assets.initialize_on_precompile = false
+   # config.assets.initialize_on_precompile = false
   end
 end
