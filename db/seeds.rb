@@ -10,7 +10,6 @@ puts "================== Seeding default user =================="
 # Add the default setting options
 puts "================== Seeding settings =================="
 default_options = {
-	:HOST => "localhost:3000",
 	:MAIL_USERNAME => "",
 	:MAIL_PASSWORD => "",
 	:SMTP_SERVER => "",
