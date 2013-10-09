@@ -19,7 +19,7 @@
         <td><%= menu.name %></td>
         <td><%= menu.description %></td>
         <td><%= menu.price %></td>
-        <td><%= check_box_tag 'menu_'+menu.id.to_s, menu.id, params[:value] %></td>
+        <td><%= check_box_tag 'menues[]', menu.id, params[:value] %></td>
       </tr>
     <% end %>    
     

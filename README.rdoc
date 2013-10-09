@@ -18,5 +18,11 @@ Includes:
 
 * Delivery via email
 
-
 This is in currently developmet.
+
+== Setting up for first running:
+
+# Run migrations
+# Run seeds.rb to create the default admin user credentials.
+# Login as admin and change credentials
+# Setup the application in the Admin Dashboard

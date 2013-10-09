@@ -1,6 +1,9 @@
 Automandado::Application.routes.draw do
+
   namespace :admin do
     resources :menus
+    resources :settings
+    resources :dashboard
   end
 
   devise_for :users

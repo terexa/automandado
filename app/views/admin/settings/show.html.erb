@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Option name:</strong>
+  <%= @admin_setting.option_name %>
+  <strong>Option value:</strong>
+  <%= @admin_setting.option_value %>
+</p>
+
+<%= link_to 'Edit', edit_admin_setting_path(@admin_setting) %> |
+<%= link_to 'Back', admin_settings_path %>

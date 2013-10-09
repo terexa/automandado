@@ -11,12 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131003212544) do
+ActiveRecord::Schema.define(version: 20131008154913) do
 
   create_table "admin_menus", force: true do |t|
     t.string   "name"
     t.string   "description"
     t.decimal  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "admin_settings", force: true do |t|
+    t.string   "option_name",  default: "", null: false
+    t.string   "option_value", default: ""
     t.datetime "created_at"
     t.datetime "updated_at"
   end
