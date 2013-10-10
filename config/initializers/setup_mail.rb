@@ -1,10 +1,10 @@
 ActionMailer::Base.smtp_settings = {
     :address=>              ENV['SMTP_SERVER'],
-    :port=>                 587,
+    :port=>                 ENV['SMTP_PORT'],
     :domain=>               ENV['MAIL_DOMAIN'],
     :user_name=>            ENV['MAIL_USERNAME'],
     :password=>             ENV['MAIL_PASSWORD'],
-    :authentication=>       "plain",
+    :authentication=>       ENV['MAIL_AUTENTICATION'],
     :enable_starttls_auto=> true
 }
 
