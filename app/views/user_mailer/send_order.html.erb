@@ -3,14 +3,27 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Welcome to Foodwagon</h1>
-    <p>
-      We have received an oder from your e-mail <%= @user.email %>
-    </p>
-    <p>
-      Your order is: 
-      <br><%= @order.to_s %>
-    </p>
+    <h1>Thanks for ordeing at FoodWagon online.</h1>
+    <p>We have received an oder from your e-mail <%= @user.email %></p>    
+    <p> Your order is:</p>
+    <table>
+      <% total=0 %>
+      <% @order.each do |o| %>
+        <% total += o.price %>
+        <tr>
+          <td><%= o.name.to_s%></td>
+          <td> £ <%= o.price.to_s%></td>
+        </tr>       
+      <% end %>
+      <tr class="total">
+        <td>---------------------------</td>
+      </tr>
+      <tr class="total">
+        <td>Total: </td>
+        <td> £ <%= total.to_s %></td>
+      </tr>
+    </table>
+
     <p>Thanks for ordering at Foodwagon we will deliver your food as soon as possible.
     Have a great day!</p>
   </body>
