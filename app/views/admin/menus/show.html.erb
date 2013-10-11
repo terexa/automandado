@@ -1,13 +1,19 @@
+<div class="columns one">
+<br>
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @admin_menu.name %>
-  <strong>Description:</strong>
-  <%= @admin_menu.description %>
-  <strong>Price:</strong>
-  <%= @admin_menu.price %>
-</p>
+<h2>Menu preview</h2>
+
+<div class="post">
+	<div class="infopost">
+	  <h3><a href="#"><%= @admin_menu.name %></a></h3>
+	  <p><span>Price £</span> <a href="#"><%= @admin_menu.price %></a></p>         
+	</div>
+	<div class="description"><%= @admin_menu.description %></div>  
+	<div class="clear"></div>  
+</div>
 
 <%= link_to 'Edit', edit_admin_menu_path(@admin_menu) %> |
 <%= link_to 'Back', admin_menus_path %>
+
+</div>

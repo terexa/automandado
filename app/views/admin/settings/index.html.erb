@@ -1,15 +1,17 @@
-<h1>Listing admin_settings</h1>
-
+<div class="columns one">
+<br>
+<h2>Setting options</h2>
+<br>
+<div class="CSSTableGenerator" >
 <table>
-  <thead>
     <tr>
-      <th></th>
-      <th></th>
-      <th></th>
+      <td>Option name</td>
+      <td>Option value</td>
+      <td></td>
+      <td></td>
     </tr>
-  </thead>
 
-  <tbody>
+
     <% @admin_settings.each do |admin_setting| %>
       <tr>
         <td><%= admin_setting.option_name %></td>
@@ -18,9 +20,11 @@
         <td><%= link_to 'Destroy', admin_setting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
-  </tbody>
 </table>
+</div>
 
 <br>
 
 <%= link_to 'New Setting', new_admin_setting_path %>
+
+</div>

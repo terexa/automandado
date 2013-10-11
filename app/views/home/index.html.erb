@@ -1,31 +1,57 @@
-<hr>
+<div class="hint columns one">
+  Your food is just at a click away. Choose your favorite meal and order online with FoodWagon. Enjoy the best flavors with our exclusive recipes.
+</div>
 
-<h1>Home Example</h1>
-<%= form_tag send_order_home_index_path, :method => :post do %>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-  	
-    <% @menus.each do |menu| %>
-      <tr>
-        <td><%= menu.name %></td>
-        <td><%= menu.description %></td>
-        <td><%= menu.price %></td>
-        <td><%= check_box_tag 'menues[]', menu.id, params[:value] %></td>
-      </tr>
-    <% end %>    
+<div class="columns two-thirds">
+  <%= form_tag send_order_home_index_path, :method => :post do %>    	
+      <% @menus.each do |menu| %>
+      <div class="post">
+        <!--div class="image"><a href="#"><img src="images/cook/grilled_potatoes_with_dill.jpg" alt="postimage"></a></div-->
+        <div class="infopost">
+          <h3><a href="#"><%= menu.name %></a></h3>
+          <p><span>Price £</span> <a href="#"><%= menu.price %></a></p>         
+        </div>
+        <div class="description"><%= menu.description %></div>
+        <div class="description"><%= check_box_tag 'menues[]', menu.id, params[:value] %></div>  
+        <div class="clear"></div>  
+      </div>
+    <% end %>
     
+      <div class="actions">
+        <% if user_signed_in? %>
+          <%= submit_tag "Send order" %>
+        <% else %>
+          Please login to send your order.
+          <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+        <% end %>
+      </div>        
+    
+  <% end %>
+</div>
 
-  </tbody>
-</table>
+<!-- COMING SOON -->
+<div class="columns one-third_last sidebar">
+  <input class="searchline" name="search" value="What do you like to eat?" onblur="if(this.value=='') this.value='What do you like to eat?'" onfocus="if(this.value =='What do you like to eat?' ) this.value=''">
 
-<div class="actions"><%= submit_tag "Send order" %></div>
-<% end %>
+  <div class="title">The most popular</div>
+
+  <!--div class="image"><img src="images/cook/carpaccio_with_nuts.jpg" alt="blogimg"></div-->
+  <h4><a href="#">carpaccio with nuts</a></h4>
+  <!--div class="image"><img src="images/cook/carpaccio_with_nuts.jpg" alt="blogimg"></div-->
+  <h4><a href="#">strawberry with cream</a></h4>
+  <!--div class="image"><img src="images/cook/carpaccio_with_nuts.jpg" alt="blogimg"></div-->
+  <h4><a href="#">cookies with strawberry</a></h4>
+  <!--div class="image"><img src="images/cook/carpaccio_with_nuts.jpg" alt="blogimg"></div-->
+  <h4><a href="#">noodles with pork and shrimps</a></h4>
+  <!--div class="image"><img src="images/cook/carpaccio_with_nuts.jpg" alt="blogimg"></div-->
+  <h4><a href="#">barbecue with vegetables and shrimps</a></h4>
+
+  <div class="title">Social</div>
+  <div class="social">
+  <a href="#"><img src=<%= asset_path('mini_facebook.png') %> alt="facebook"></a>
+  <a href="#"><img src=<%= asset_path('mini_twitter.png') %> alt="twitter"></a>
+  <a href="#"><img src=<%= asset_path('mini_rss.png') %> alt="rss"></a>
+  <a href="#"><img src=<%= asset_path('mini_google.png') %> alt="google+"></a>
+  </div>
+
+</div>
